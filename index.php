@@ -73,7 +73,6 @@ if (isset($_SESSION['user_id'])) {
             </ul>
             <div>
                 <ul class="text-end list-unstyled list-inline mb-0 nav-social">
-                    <li class="list-inline-item nav-number"><i class="ti-mobile"></i> <span>+56 9 6631 9792</span></li>
                     <li class="list-inline-item"><a href="" class="facebook"><i class="ti-facebook"></i></a></li>
                 </ul>
             </div>
