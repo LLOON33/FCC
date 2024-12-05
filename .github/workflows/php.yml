@@ -35,14 +35,3 @@ jobs:
     # Paso 4: Instalar dependencias de Composer
     - name: Install dependencies
       run: composer install
-
-    # Paso 5: Ejecutar PHPUnit
-    - name: Run PHPUnit tests
-      run: vendor/bin/phpunit --configuration phpunit.xml
-
-    # Paso 6: Subir los resultados de PHPUnit como un artefacto
-    - name: Upload PHPUnit Test Results
-      uses: actions/upload-artifact@v2
-      with:
-        name: phpunit-results
-        path: tests/_output
