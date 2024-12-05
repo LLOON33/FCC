@@ -14,14 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Paso 1: Clonar el repositorio
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v3
+      with:
+        php-version: '8.1'
+
     - uses: actions/checkout@v4
 
-    # Paso 2: Validar composer.json y composer.lock
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
 
-    # Paso 3: Cache Composer packages
     - name: Cache Composer packages
       id: composer-cache
       uses: actions/cache@v3
@@ -31,11 +33,9 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-php-
 
-    # Paso 4: Instalar dependencias
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-scripts
 
-    # Paso 5: Ejecutar pruebas de PHPUnit
     - name: Run PHPUnit tests
       run: vendor/bin/phpunit
 
