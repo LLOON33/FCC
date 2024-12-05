@@ -14,12 +14,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
     - name: Setup PHP
-      uses: shivammathur/setup-php@v3
+      uses: shivammathur/setup-php@v2
       with:
         php-version: '8.1'
-
-    - uses: actions/checkout@v4
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
@@ -38,13 +39,3 @@ jobs:
 
     - name: Run PHPUnit tests
       run: vendor/bin/phpunit
-
-    # Optional: If you have tests, you can uncomment this step.
-    # - name: Run test suite
-    #   run: composer run-script test
-
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
-
-    # - name: Run test suite
-    #   run: composer run-script test
