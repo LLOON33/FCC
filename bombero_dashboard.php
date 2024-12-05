@@ -102,7 +102,7 @@ if (isset($_SESSION['user_id'])) {
                                     <a href="vehiculos_fallas_bomb.php" class="btn btn-outline-white">Informacion de los vehiculos</a>
                                 </div>
                                 <div class="mt-4">
-                                    <a href="reporte_fallas.php" class="btn btn-outline-white">Reportar falla</a>
+                                    <a href="Reporte_fallas.php" class="btn btn-outline-white">Reportar falla</a>
                                 </div>
                             </div>
                         </div><!-- end col -->
